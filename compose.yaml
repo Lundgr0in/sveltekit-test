@@ -1,0 +1,22 @@
+services:
+  # database:
+  #   build: ./database/
+  #   ports:
+  #     - "3306:3306"
+  #   restart: always,
+  #   environment:
+  #     MYSQL_DATABASE: database
+  #     MYSQL_ROOT_PASSWORD: qwe123
+  backend:
+    build: ./backend/
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend/src/:/backend/src/
+    
+  frontend:
+    build: ./frontend/
+    ports:
+      - "3000:5173"
+    volumes:
+      - ./frontend/code/src/:/frontend/code/src/
